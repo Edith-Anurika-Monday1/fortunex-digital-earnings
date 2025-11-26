@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FortuneX - Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="dashboard.css">
+<script type="module" src="dashboard.js"></script>
+</head>
+<body>
+    <!-- Dummy image reference for f1.png - replace with actual image path or remove if not used -->
+    <img src="f1.png" style="display:none;" alt="Placeholder"> 
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-logo">
+                <!-- NOTE: You might need to replace 'f1.png' with a valid path or use an icon -->
+                <img src="https://fortunexdigital.com/dashboard/f1.png" alt="FortuneX Logo"> 
+            </div>
+            
+            <div class="sidebar-menu">
+                <ul>
+                    <li><a href="#" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="#"><i class="fas fa-chart-line"></i> Earnings</a></li>
+                    <li><a href="#"><i class="fas fa-graduation-cap"></i> Courses</a></li>
+                    <li><a href="#"><i class="fas fa-gem"></i> Digital Assets</a></li>
+                    <li><a href="#"><i class="fas fa-users"></i> Network</a></li>
+                    <li><a href="#"><i class="fas fa-wallet"></i> Wallet</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-user">
+                <div class="user-info-mini">
+                    <div class="user-avatar-mini">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-details-mini">
+                        <h4 id="sidebarUserName">User Name</h4>
+                        <p id="sidebarUserEmail">user@example.com</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <div class="header-title">
+                    <h1>Dashboard</h1>
+                    <p>Welcome back to your FortuneX account</p>
+                </div>
+                <div class="header-actions">
+                    <div class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">8</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Account Status Section -->
+            <section class="account-status-section">
+                <div class="account-status-header">
+                    <h2><i class="fas fa-user-circle"></i> Account Status</h2>
+                    <span class="status-badge status-inactive" id="statusBadge">Inactive</span>
+                </div>
+                
+                <div class="account-status-content">
+                    <div class="account-status-info">
+                        <p>Your account is currently <span id="statusText">inactive</span>. Activate your account to unlock all features and start your journey with FortuneX.</p>
+                    </div>
+                    <!-- This button now triggers the PROMPT MODAL if inactive -->
+                    <div class="account-status-actions">
+                        <button class="btn btn-primary" id="activateAccountBtn">Click here to activate your account <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Account Activation Section (Visible only if Inactive) -->
+            <section class="account-activation-section" id="activationSection">
+                <div class="section-header">
+                    <h2><i class="fas fa-key"></i> Account Activation</h2>
+                </div>
+                
+                <div class="activation-content">
+                    <div class="activation-details">
+                        <h3><i class="fas fa-box"></i> Your Package Details</h3>
+                        <div class="detail-row">
+                            <span class="detail-label">Package Name:</span>
+                            <span class="detail-value" id="packageDetail">Inactive</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Package Price:</span>
+                            <span class="detail-value" id="priceDetail">Inactive</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Payment Status:</span>
+                            <span class="detail-value" id="paymentStatusDetail">Pending</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Registration Date:</span>
+                            <span class="detail-value">Today</span>
+                            <span class="detail-value" id="regDateDetail">Today</span>
+                        </div>
+                    </div>
+                    <div class="account-status-actions">
+                        <button class="btn btn-primary" id="claimRewardBtn">Claim instant ₦12,000 reward here <i class="fas fa-gift"></i></button>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Features Section -->
+            <section class="features-section">
+                <div class="features-header">
+                    <h2><i class="fas fa-th-large"></i> Your Features</h2>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card disabled" id="featureEarnings">
+                        <div class="feature-icon primary">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="feature-title">Earnings</h3>
+                        <div class="feature-value">₦0.00</div>
+                        <p class="feature-description">Track your earnings and rewards</p>
+                    </div>
+                    
+                    <div class="feature-card disabled" id="featureCourses">
+                        <div class="feature-icon secondary">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="feature-title">Courses</h3>
+                        <div class="feature-value">0</div>
+                        <p class="feature-description">Access digital skill courses</p>
+                    </div>
+                    
+                    <div class="feature-card disabled" id="featureAssets">
+                        <div class="feature-icon primary">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h3 class="feature-title">Digital Assets</h3>
+                        <div class="feature-value">0</div>
+                        <p class="feature-description">Manage your digital portfolio</p>
+                    </div>
+                    
+                    <div class="feature-card disabled" id="featureNetwork">
+                        <div class="feature-icon secondary">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="feature-title">Network</h3>
+                        <div class="feature-value">0</div>
+                        <p class="feature-description">Connect with global brands</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Recent Activity Section -->
+            <section class="recent-activity-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-history"></i> Recent Activity</h2>
+                </div>
+                
+                <ul class="activity-list">
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <div class="activity-content">
+                            <h4>Account Registration</h4>
+                            <p>You successfully registered for FortuneX</p>
+                        </div>
+                        <div class="activity-time">Today</div>
+                    </li>
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <div class="activity-content">
+                            <h4>Package Selection</h4>
+                            <p>You selected the Basic Pack</p>
+                        </div>
+                        <div class="activity-time">Today</div>
+                    </li>
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="activity-content">
+                            <h4>Account Activation Pending</h4>
+                            <p>Complete your payment to activate your account</p>
+                        </div>
+                        <div class="activity-time">Today</div>
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </div>
+    
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <!-- 1. PAYMENT DETAILS MODAL -->
+    <div class="modal-overlay" id="paymentModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2><i class="fas fa-credit-card"></i> Payment Information</h2>
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="timer-container">
+                    <div class="timer-label">Time remaining to complete payment:</div>
+                    <div class="timer" id="paymentTimer">10:00</div>
+                </div>
+                
+                <div class="payment-account">
+                    <div class="payment-account-row">
+                        <span class="detail-label">Bank Name:</span>
+                        <span class="detail-value" id="modalBankName">Loading...</span>
+                    </div>
+                    <div class="payment-account-row">
+                        <span class="detail-label">Account Name:</span>
+                        <span class="detail-value" id="modalAccName">Loading...</span>
+                    </div>
+                    <div class="payment-account-row">
+                        <span class="detail-label">Account Number:</span>
+                        <div style="display: flex; align-items: center;">
+                            <span class="detail-value" id="modalAccNumber">Loading...</span>
+                            <div class="copy-icon" id="modalCopyAccNumber" title="Copy Account Number">
+                                <i class="fas fa-copy"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="payment-actions">
+                    <a href="#" class="payment-btn whatsapp" id="modalWhatsappBtn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Send Proof via WhatsApp
+                    </a>
+                    <a href="#" class="payment-btn telegram" id="modalTelegramBtn" target="_blank">
+                        <i class="fab fa-telegram-plane"></i> Send Proof via Telegram
+                    </a>
+                </div>
+                 <p style="font-size: 0.85rem; color: var(--text-light); opacity: 0.7; margin-top: 20px; text-align: center;">
+                    Please make your payment to the account above and send proof of payment to us via WhatsApp or Telegram within the given time.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. NEW ACTIVATION PROMPT MODAL -->
+    <div class="modal-overlay" id="activationPromptModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2><i class="fas fa-exclamation-triangle"></i> Activation Required</h2>
+                <button class="modal-close" id="promptModalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" style="text-align: center;">
+                <p style="font-size: 1.1rem; margin-bottom: 25px;">You're almost there! Complete your account activation by clicking the button below.</p>
+                <a href="./payment.html" class="btn btn-primary" style="padding: 15px 30px;">Proceed to Activation <i class="fas fa-credit-card"></i></a> 
+            </div>
+        </div>
+    </div>
+    
+    <!-- Copy Notification -->
+    <div id="copy-notification">Account Number Copied!</div>
+    
+    <!-- Social Proof Notification -->
+    <div id="socialProofNotification"></div>
+</body></html>

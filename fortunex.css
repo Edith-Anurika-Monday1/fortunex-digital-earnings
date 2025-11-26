@@ -1,0 +1,207 @@
+:root {
+    --bg-dark-purple: #8f1a0d; /* Original background */
+    --card-purple: #5e0f07;    /* Original card background */
+    --text-light: #f0f0f0;     /* Original light text */
+    --text-secondary: #c0b8d8; /* Original secondary text */
+    --gradient-start: #ffae00; /* Original orange start */
+    --gradient-end: #ff4500;   /* Brighter Red/Orange gradient for buttons */
+    --primary-red: #ff0000; 
+    --accent-orange: #ffa500; 
+    --button-gradient-start: #ff4500; 
+    --button-gradient-end: #cc0000;
+    --border-dark: #4a3a6a;
+}
+
+*, *::before, *::after {
+     box-sizing: border-box;
+      margin: 0;
+       padding: 0;
+        border: 0;
+     }
+
+ body { 
+    line-height: 1.6; 
+    -webkit-text-size-adjust: 100%;
+     font-family: 'Poppins', sans-serif; 
+     background-color: var(--bg-dark-purple);
+    color: var(--text-light); 
+}
+       
+a { 
+    text-decoration: none; 
+    color: inherit;
+ }
+
+.container {
+    max-width: 1000px; 
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1{
+    font-weight:700 ;
+    margin-bottom: 1.5rem;
+    color: var(--gradient-start);
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+h1:hover{
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    cursor: none;
+    color: var(--text-light);
+    text-transform: uppercase;
+}
+h2 {
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+.hero h3 {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+.hero p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 1.5rem auto;
+}
+
+
+
+.plan-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0; 
+}
+
+.plan-card li {
+    margin: 12px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+/* Custom purple checkmark circle */
+.plan-card li::before {
+    content: "✔";
+    color:#a178ff;
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.description{
+    text-align: center;
+    color: #c5bdd1;
+}
+
+img{
+   position: relative;
+   width: 130px;
+}
+
+.bn{
+    position: relative;
+    left: 380px;
+}
+
+.description{
+    font-size: 15px;
+}
+img{
+        width: 100%;
+        max-width: 100%; 
+        height: auto;
+        border-radius: 15px;
+        margin: 20px 0;
+    }
+
+    section { 
+  padding: 40px 0;
+  text-align: center; 
+    
+        }
+
+  .plans {
+     background-color: var(--bg-dark-purple); 
+    }
+ 
+    .plan-card {
+        background-color: var(--card-purple);
+        border-radius: 20px;
+        padding: 30px;
+        margin: 30px auto;
+        text-align: left;
+        max-width: 350px;
+        border: 1px solid var(--border-dark);
+    }
+    .btn {
+        display: inline-block;
+        padding: 16px 35px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        text-align: center;
+        border: none;
+        cursor: pointer;
+        margin-top: 1.5rem;
+        width: auto;
+        max-width: 350px;
+        transition: all 0.3s ease;
+    }
+
+    .b-reg {
+        color: white;
+        background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+        box-shadow: 0 8px 20px rgba(255, 69, 0, 0.4);
+    }
+    .b-reg:hover {
+         box-shadow: 0 10px 25px rgba(255, 69, 0, 0.6);
+    }
+    .register-btn { 
+        color: white;
+        background: linear-gradient(90deg, var(--accent-orange), var(--primary-red));
+        box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+    }
+
+    .plan-card h3 {
+        font-size: 1.5rem;
+        color: var(--text-light);
+        border-bottom: 1px dashed #4a3a6a;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+    }
+
+        .reg { padding: 40px 0; }
+        .reg h2 { color: var(--text-light); }
+        .reg p { color: var(--text-secondary); }
+
+        footer { 
+            text-align: center;
+            padding: 30px 20px; 
+            color: #888;
+            font-size: 0.9rem;
+         }
+        
+         #who{
+            color: var(--text-secondary);
+            padding: 50px;
+            font-family: poppins;
+            font-size: 20px;
+            line-height: 2.5rem;
+         }
+         span{
+            font-size: 25px;
+            font-weight: bolder;
+            font-family: poppins;
+            color: var(--gradient-start);
+         }

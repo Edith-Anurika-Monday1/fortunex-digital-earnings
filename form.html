@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FortuneX - Sign Up for Automated Earnings</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light only">
+    <meta name="description" content="Turn your time into automated earnings with FortuneX. Sign up today!">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link  href="dashboard.html">
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="main">
+            <div class="inner">
+                <div id="image01" class="image">
+                    <img src="https://fortunexdigital.com/onboard/assets/images/fortune.png" alt="FortuneX Logo">
+                </div>
+                
+                <!--<h1 id="text01">Join FortuneX Today!</h1>-->
+
+                <form id="form01" action="dashboard.html" method="post">
+                    <div class="inner">
+                        <div class="field">
+                            <input type="text" name="name" id="form01-name" placeholder="Full Name" maxlength="128" required>
+                        </div>
+                        <div class="field">
+                            <input type="email" name="email" id="form01-email" placeholder="Email Address" maxlength="128" required>
+                        </div>
+                        <div class="field">
+                            <input type="text" name="username" id="form01-username" placeholder="Choose a Username" maxlength="128" required>
+                        </div>
+                        <div class="field">
+                            <input type="password" name="password" id="form01-password" placeholder="Create Password" maxlength="128" required>
+                        </div>
+                        <div class="field">
+                            <input type="text" name="country" id="form01-country" placeholder="Your Country" maxlength="128" required>
+                        </div>
+                        <!--<div class="field">-->
+                        <!--    <input type="text" name="coupon_code" id="form01-coupon" placeholder="Epin" maxlength="128">-->
+                        <!--</div>-->
+
+                        <div class="actions">
+                         <button type="button"><a href="/dashboard.html">Sign Up Now</a></button> 
+                        </div>
+                        
+                    </div>
+                    <input type="hidden" name="id" value="form01">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
